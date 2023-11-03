@@ -1,0 +1,7 @@
+git init - инициализация
+git remote add origin link - привязка репозитория
+
+
+git add .
+git commit -m 'результат'
+git push origin master/main
