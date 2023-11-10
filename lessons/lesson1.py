@@ -57,3 +57,4 @@ human.tprint()
 
 # print(human.__abs__())
 print(abs(human))
+# print(Human.tprint(self=human))
