@@ -1,3 +1,5 @@
+env
 .idea
-main.py
 __pycache__\
+venv
+

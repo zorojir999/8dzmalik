@@ -1,7 +1,7 @@
 # 1код  2git
 # ООП
 # классы
-
+from les4 import Bank
 
 # print(sum1(1, 8))
 
