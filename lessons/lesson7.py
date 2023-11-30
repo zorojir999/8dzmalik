@@ -1,36 +1,22 @@
-# SQL - язык структурированных запросов
-# база данных -
-# СУБД- система управления базами данных
-# NOsql:SQL
-# posgreSQL,mySQL, SQLite3-2
-
 import sqlite3
 
-# CRUD - create reed update delete
-db = sqlite3.connect('op36_3.db')
-cursor = db.cursor()
+op36_3_db = sqlite3.connect('op36_3.db')
+cursor = op36_3_db.cursor()
 
-cursor.execute('''CREATE TABLE IF NOT EXISTS user (
-lastname TEXT,
-age INTEGER,
-view INTEGER,
-bitday DATE
+cursor.execute('''CREATE TABLE IF NOT EXISTS student(
+name TEXT,
+surname TEXT,
+birth_year DATE,
+hobby TEXT,
+points INTEGER
 )''')
 
-# CREATE - INSERT INTO
-# cursor.execute('''INSERT INTO user VALUES ("beka",49,5,'2003-87-99')''')
+# cursor.execute('''INSERT INTO student VALUES ('erwr', 'rereak', '1999-12-29', 'skiing', 11)''')
+cursor.execute('''SELECT * FROM student WHERE LENGTH(surname) >=10''')
+cursor.execute('''UPDATE student SET name = 'GENIUS' WHERE points >= 10''')
+cursor.execute('''DELETE FROM STUDENT WHERE rowid % 2 ==0 ''')
+cursor.execute('''SELECT * FROM student''')
 
-# UPDATE-UPDATE
-cursor.execute('''UPDATE user SET age=99 WHERE rowid!=2 ''')
-
-
-
-# REED-SELECT,fech
-cursor.execute('''SELECT rowid,* FROM user''')
-a=cursor.fetchall()
-for i in a:
+results = cursor.fetchall()
+for i in results:
     print(i)
-
-
-db.commit()
-db.close()
